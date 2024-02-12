@@ -9,10 +9,12 @@ import Foundation
 import SwiftData
 
 @Model
-final class Item {
+final class Game {
     var timestamp: Date
+    var name: String
     
-    init(timestamp: Date) {
+    init(timestamp: Date, name: String) {
         self.timestamp = timestamp
+        self.name = name
     }
 }

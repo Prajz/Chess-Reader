@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D75D9D662B5ADB3800E2D95C /* cApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75D9D652B5ADB3800E2D95C /* cApp.swift */; };
 		D75D9D682B5ADB3800E2D95C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75D9D672B5ADB3800E2D95C /* ContentView.swift */; };
-		D75D9D6A2B5ADB3800E2D95C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75D9D692B5ADB3800E2D95C /* Item.swift */; };
+		D75D9D6A2B5ADB3800E2D95C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75D9D692B5ADB3800E2D95C /* Game.swift */; };
 		D75D9D6C2B5ADB3A00E2D95C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D75D9D6B2B5ADB3A00E2D95C /* Assets.xcassets */; };
 		D75D9D6F2B5ADB3A00E2D95C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D75D9D6E2B5ADB3A00E2D95C /* Preview Assets.xcassets */; };
 		D75D9D792B5ADB3A00E2D95C /* cTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75D9D782B5ADB3A00E2D95C /* cTests.swift */; };
@@ -38,7 +38,7 @@
 		D75D9D622B5ADB3800E2D95C /* c.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = c.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75D9D652B5ADB3800E2D95C /* cApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cApp.swift; sourceTree = "<group>"; };
 		D75D9D672B5ADB3800E2D95C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		D75D9D692B5ADB3800E2D95C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		D75D9D692B5ADB3800E2D95C /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		D75D9D6B2B5ADB3A00E2D95C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D75D9D6E2B5ADB3A00E2D95C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D75D9D742B5ADB3A00E2D95C /* cTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D70F25802B7953EA000307D0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D75D9D672B5ADB3800E2D95C /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D75D9D592B5ADB3800E2D95C = {
 			isa = PBXGroup;
 			children = (
@@ -96,9 +104,9 @@
 		D75D9D642B5ADB3800E2D95C /* c */ = {
 			isa = PBXGroup;
 			children = (
+				D70F25802B7953EA000307D0 /* Views */,
 				D75D9D652B5ADB3800E2D95C /* cApp.swift */,
-				D75D9D672B5ADB3800E2D95C /* ContentView.swift */,
-				D75D9D692B5ADB3800E2D95C /* Item.swift */,
+				D75D9D692B5ADB3800E2D95C /* Game.swift */,
 				D75D9D6B2B5ADB3A00E2D95C /* Assets.xcassets */,
 				D75D9D6D2B5ADB3A00E2D95C /* Preview Content */,
 			);
@@ -261,7 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D75D9D682B5ADB3800E2D95C /* ContentView.swift in Sources */,
-				D75D9D6A2B5ADB3800E2D95C /* Item.swift in Sources */,
+				D75D9D6A2B5ADB3800E2D95C /* Game.swift in Sources */,
 				D75D9D662B5ADB3800E2D95C /* cApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,11 +437,13 @@
 				DEVELOPMENT_TEAM = TYVJV99Z56;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Chess Reader";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,11 +468,13 @@
 				DEVELOPMENT_TEAM = TYVJV99Z56;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Chess Reader";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

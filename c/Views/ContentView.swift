@@ -10,16 +10,16 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query private var matches: [Game]
 
     var body: some View {
         NavigationSplitView {
             List {
-                ForEach(items) { item in
+                ForEach(matches) { item in
                     NavigationLink {
                         Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
                     } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        Text("Game on \(item.name)") //, format: Date.FormatStyle(date: .numeric, time: .standard))
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -41,15 +41,15 @@ struct ContentView: View {
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
+            let newMatch = Game(timestamp: Date(), name: Date.FormatStyle(date: .abbreviated, time: .standard).format(.now))
+            modelContext.insert(newMatch)
         }
     }
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(items[index])
+                modelContext.delete(matches[index])
             }
         }
     }
@@ -57,5 +57,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Game.self, inMemory: true)
 }
