@@ -9,12 +9,15 @@ import Foundation
 import SwiftData
 
 @Model
-final class Game {
+final class Game{
     var timestamp: Date
     var name: String
+    var moves: String?
+    
     
     init(timestamp: Date, name: String) {
         self.timestamp = timestamp
         self.name = name
+        self.moves = nil
     }
 }

@@ -21,9 +21,6 @@ struct HomeView: View {
                             .padding()
                     }
                     .toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            EditButton()
-                        }
                         ToolbarItem {
                             Button(action: addItem) {
                                 Label("Add Item", systemImage: "plus")
@@ -34,20 +31,28 @@ struct HomeView: View {
                     List {
                         ForEach(matches) { item in
                             NavigationLink {
-                                Text("Game on \(item.name)")
+                                GameView(game: item)
                             } label: {
                                 Text("Game on \(item.name)")
                             }
                         }
                         .onDelete(perform: deleteItems)
                     }
+                    .navigationTitle("Recent Games")
                     .toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
+                        ToolbarItem(placement: .navigationBarLeading) {
                             EditButton()
                         }
                         ToolbarItem {
                             Button(action: addItem) {
                                 Label("Add Item", systemImage: "plus")
+                            }
+                        }
+                        ToolbarItem{
+                            Button(action: shareButton)
+                            {
+                                Image(systemName: "square.and.arrow.up")
+                                    
                             }
                         }
                     }
@@ -70,6 +75,13 @@ struct HomeView: View {
                 modelContext.delete(matches[index])
             }
         }
+    }
+    
+    func shareButton() {
+            let url = URL(string: "https://www.praj.co.uk/")
+            let activityController = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
+
+            UIApplication.shared.windows.first?.rootViewController!.present(activityController, animated: true, completion: nil)
     }
 }
 
